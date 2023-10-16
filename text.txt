@@ -1,0 +1,9 @@
+{
+  "firstName": "saer12",
+  "lastName": "gahraza",
+  "email": "me1523@ggl.com",
+  "phoneNumber": "1848",
+  "rollNumber": "39543",
+  "semester": "5",
+  "department":"cs"
+}
