@@ -10,21 +10,13 @@ const course = sequelize.define(
       autoIncrement: true,
       type: DataTypes.INTEGER,
     },
-    title: {
+    subject: {
       type: DataTypes.STRING,
       allowNull: false,
     },
     description: {
       type: DataTypes.TEXT,
       allowNull: true,
-    },
-    instructor: {
-      type: DataTypes.STRING,
-      allowNull: true,
-    },
-    duration: {
-      type: DataTypes.STRING,
-      allowNull: false,
     },
   },
   {

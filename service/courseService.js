@@ -3,7 +3,7 @@ const { models } = require("../models/definations");
 module.exports = {
   getCourses: async () => {
     const result = await models.course.findAll({
-      include: { model: models.teacher, as: "teacher" },
+      include: { model: models.teacher, as: "Teacher" },
     });
     return result;
   },
@@ -13,10 +13,8 @@ module.exports = {
   },
   createCourse: async (data) => {
     const result = await models.course.create({
-      title: data.title,
+      subject: data.subject,
       description: data.description,
-      instructor: data.instructor,
-      duration: data.duration,
     });
     return result;
   },

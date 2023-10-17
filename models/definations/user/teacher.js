@@ -9,7 +9,7 @@ const teacher = sequelize.define(
       autoIncrement: true,
       type: DataTypes.INTEGER,
     },
-    subject: {
+    specialization: {
       allowNull: false,
       type: DataTypes.STRING,
     },

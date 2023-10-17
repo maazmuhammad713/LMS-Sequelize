@@ -14,15 +14,19 @@ module.exports = {
 
     const teacher = await teacherService.createTeacher({
       userID: user.id,
-      subject: Teacher.subject,
+      specialization: Teacher.specialization,
     });
 
     // console.log(student)
     //console.log(req.body);
     res.send(teacher);
   },
-  teachWC: async (req, res) => {
-    const data = await teacherService.teachWC();
-    res.send(data);
-  },
+  // teachWC: async (req, res) => {
+  //   const data = await teacherService.teachWC();
+  //   res.send(data);
+  // },
+  // findAllTeachers: async (req, res) => {
+  //   const data = await teacherService.findAllTeachers();
+  //   res.send(data);
+  // },
 };
