@@ -20,4 +20,16 @@ module.exports = {
     });
     return result;
   },
+  getTeachersOfCourse: async (data) => {
+    const result = await models.teacher.findAll({
+      include: [
+        {
+          model: models.course,
+          as: "Course",
+          where: { id: data },
+        },
+      ],
+    });
+    return result;
+  },
 };
