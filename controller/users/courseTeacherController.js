@@ -1,8 +1,20 @@
 const courseTeacherService = require("../../service/courseTeacherService");
 
 module.exports = {
-  createCourseTeacher: async (req, res) => {
-    const result = await courseTeacherService.createCourseTeacher(req.body);
+  createCourseTeachers: async (req, res) => {
+    const { courseId, teacherIds } = req.body;
+    const result = await courseTeacherService.createCourseTeachers(
+      courseId,
+      teacherIds
+    );
+    res.json(result);
+  },
+  createCoursesTeacher: async (req, res) => {
+    const { teacherId, courseIds } = req.body;
+    const result = await courseTeacherService.createCoursesTeacher(
+      teacherId,
+      courseIds
+    );
     res.json(result);
   },
   getCoursesTaughtByTeacher: async (req, res) => {

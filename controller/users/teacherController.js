@@ -17,8 +17,6 @@ module.exports = {
       specialization: Teacher.specialization,
     });
 
-    // console.log(student)
-    //console.log(req.body);
     res.send(teacher);
   },
   // teachWC: async (req, res) => {

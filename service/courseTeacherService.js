@@ -1,12 +1,29 @@
 const { models } = require("../models/definations");
 
 module.exports = {
-  createCourseTeacher: async (data) => {
-    const result = await models.TeacherCourse.create({
-      teacherID: data.teacherID,
-      courseID: data.courseID,
-    });
-    return result;
+  createCourseTeachers: async (courseId, teacherIds) => {
+    try {
+      const relationships = teacherIds.map((teacherId) => ({
+        teacherID: teacherId,
+        courseID: courseId,
+      }));
+      const result = await models.TeacherCourse.bulkCreate(relationships);
+      return result;
+    } catch (error) {
+      throw error;
+    }
+  },
+  createCoursesTeacher: async (teacherId, courseIds) => {
+    try {
+      const relationships = courseIds.map((courseId) => ({
+        teacherID: teacherId,
+        courseID: courseId,
+      }));
+      const result = await models.TeacherCourse.bulkCreate(relationships);
+      return result;
+    } catch (error) {
+      throw error;
+    }
   },
   getCoursesTaughtByTeacher: async (data) => {
     const result = await models.course.findAll({

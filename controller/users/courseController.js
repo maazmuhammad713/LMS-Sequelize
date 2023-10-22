@@ -6,7 +6,7 @@ module.exports = {
     res.send(data);
   },
   getCourseById: async (req, res) => {
-    const courseId = req.params.id; // Get the course ID from the URL parameter
+    const courseId = req.params.id;
     const course = await courseService.getCourseById(courseId);
 
     if (!course) {
